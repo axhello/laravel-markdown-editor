@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Request;
 
 class MdEditor
 {
-    public static $_errors=array();
+    public static $_errors = [];
 
     protected static function addError($message)
     {
@@ -33,9 +33,8 @@ class MdEditor
     public static function uploadImgFile($path)
     {
         try {
-            // File Upload
-            if (Request::hasFile('image')) {
-                $pic = Request::file('image');
+            if (Request::hasFile('editormd-image-file')) {
+                $pic = Request::file('editormd-image-file');
                 if ($pic->isValid()) {
                     $newName = md5(rand(1, 1000).$pic->getClientOriginalName()).".".$pic->getClientOriginalExtension();
                     $pic->move($path, $newName);
@@ -51,9 +50,9 @@ class MdEditor
         }
 
         $data = array(
-            'status' => empty($message) ? 0 : 1,
+            'success' => !empty($message) ? 0 : 1,
             'message' => self::getLastError(),
-            'url' =>! empty($url)?$url:''
+            'url' => !empty($url) ? $url : ''
         );
 
         return $data;
