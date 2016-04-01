@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Facade;
 
 class MDEditorFacade extends Facade
 {
-
     protected static function getFacadeAccessor()
     {
         return 'MDEditor';

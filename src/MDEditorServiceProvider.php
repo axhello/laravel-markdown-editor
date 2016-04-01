@@ -42,7 +42,7 @@ class MDEditorServiceProvider extends ServiceProvider
     {
         //
         $this->app->singleton('MDEditor', function ($app) {
-            return new  \Axhello\Editor\MDEditor;
+            return new \Axhello\Editor\MDEditor;
         });
     }
 }
