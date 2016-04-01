@@ -4,15 +4,10 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Axhello",
+            "name": "axhello",
             "email": "zhanglin-pc@live.com"
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
-    "autoload": {
-      "psr-4": {
-        "Axhello\\Editor\\": "src/"
-      }
-    }
+    "require": {}
 }
