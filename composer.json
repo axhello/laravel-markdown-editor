@@ -1,0 +1,14 @@
+{
+    "name": "melifes/laravel-markdown-editor",
+    "description": "Based on the markdown editor laravel 5",
+    "type": "php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "melifes",
+            "email": "zhanglin-pc@live.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
