@@ -1,12 +1,11 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: zhanglin
+ * User: Axhello
  * Date: 4/1/16
  * Time: 12:59
  */
-
-namespace melifes\Editor;
+namespace Axhello\Editor;
 
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;

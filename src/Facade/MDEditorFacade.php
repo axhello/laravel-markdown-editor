@@ -1,16 +1,19 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: zhanglin
+ * User: Axhello
  * Date: 4/1/16
  * Time: 13:09
  */
-namespace YuanChao\Editor\Facade;
+namespace Axhello\Editor\Facade;
 
 use Illuminate\Support\Facades\Facade;
 
-class MDEditorFacade extends Facade{
-    protected static function getFacadeAccessor(){
+class MDEditorFacade extends Facade
+{
+
+    protected static function getFacadeAccessor()
+    {
         return 'MDEditor';
     }
 }

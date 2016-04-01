@@ -1,26 +1,27 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: zhanglin
+ * User: Axhello
  * Date: 4/1/16
  * Time: 13:09
  */
-
-namespace melifes\Editor;
+namespace Axhello\Editor;
 
 use Illuminate\Support\Facades\Request;
 
 class MdEditor
 {
-    static $_errors=array();
+    public static $_errors=array();
 
-    protected static function addError($message){
-        if(!empty($message)){
+    protected static function addError($message)
+    {
+        if (!empty($message)) {
             self::$_errors[] = $message;
         }
     }
 
-    protected static function getLastError(){
+    protected static function getLastError()
+    {
         return empty(self::$_errors) ? '' : array_pop(self::$_errors);
     }
 
@@ -29,22 +30,23 @@ class MdEditor
      * @param string $path
      * @return array
      */
-    public static function uploadImgFile($path){
-        try{
+    public static function uploadImgFile($path)
+    {
+        try {
             // File Upload
-            if (Request::hasFile('image')){
+            if (Request::hasFile('image')) {
                 $pic = Request::file('image');
-                if($pic->isValid()){
-                    $newName = md5(rand(1,1000).$pic->getClientOriginalName()).".".$pic->getClientOriginalExtension();
-                    $pic->move($path,$newName);
+                if ($pic->isValid()) {
+                    $newName = md5(rand(1, 1000).$pic->getClientOriginalName()).".".$pic->getClientOriginalExtension();
+                    $pic->move($path, $newName);
                     $url = asset($path.'/'.$newName);
-                }else{
+                } else {
                     self::addError('The file is invalid');
                 }
-            }else{
+            } else {
                 self::addError('Not File');
             }
-        }catch (\Exception $e){
+        } catch (\Exception $e) {
             self::addError($e->getMessage());
         }
 

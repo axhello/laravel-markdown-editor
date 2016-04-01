@@ -1,14 +1,18 @@
 {
-    "name": "melifes/laravel-markdown-editor",
+    "name": "Axhello/laravel-markdown-editor",
     "description": "Based on the markdown editor laravel 5",
-    "type": "php",
     "license": "MIT",
     "authors": [
         {
-            "name": "melifes",
+            "name": "Axhello",
             "email": "zhanglin-pc@live.com"
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {},
+    "autoload": {
+      "psr-4": {
+        "Axhello\\Editor\\": "src/"
+      }
+    }
 }
