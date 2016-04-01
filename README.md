@@ -18,14 +18,14 @@ Editor.md: https://pandao.github.io/editor.md/
 3.在config/app.php 的 providers 数组加入一条
 
 ```
-'Axhello\Editor\MDEditorServiceProvider::class'
+Axhello\Editor\MDEditorServiceProvider::class
 ```
 4.在config/app.php 的 aliases 数组加入一条
 
 ```
 'MDEditor' => Axhello\Editor\Facade\MDEditorFacade::class,
 ```
-5.执行 php artisan vendor:publish
+5.执行 `php artisan vendor:publish`
 
 执行完上面的命令后，会生成配置文件和视图文件到你的 config/ 和 views/vendor 目录
 
@@ -41,13 +41,13 @@ Editor.md: https://pandao.github.io/editor.md/
 
 ```
 <div id="mdEditor">
-	{!! Form::textarea('content', '', ['class' => 'form-control') !!}
+	{!! Form::textarea('content', null, ['class' => 'form-control') !!}
 </div>
 
 //或者是这样
 
 <div id="mdEditor">
-	 <textarea></textarea>
+	 <textarea name="content"></textarea>
 </div>
 
 ```
